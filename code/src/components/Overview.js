@@ -18,7 +18,7 @@ export const Overview = () => {
   }, [])
 
   const fetchThoughts = () => {
-    fetch('https://blooming-brushlands-33610.herokuapp.com/thoughts')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
     .then(res => res.json())
     .then(data => setThoughts(data))
   }
@@ -32,20 +32,20 @@ export const Overview = () => {
       body: JSON.stringify({ message: newThought })
     }
   
-    fetch('https://blooming-brushlands-33610.herokuapp.com/thoughts', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(()=> setNewThought(''))
   }
 
-  const handleLikes = (_id) => {
+  const handleLikes = (id) => {
 
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(`https://blooming-brushlands-33610.herokuapp.com/thoughts/${_id}/like`, options)
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
   }
