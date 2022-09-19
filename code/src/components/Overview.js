@@ -20,7 +20,7 @@ export const Overview = () => {
   const fetchThoughts = () => {
     fetch('https://blooming-brushlands-33610.herokuapp.com/thoughts')
     .then(res => res.json())
-    .then(data => setThoughts(data.response))
+    .then(data => setThoughts(data))
   }
 
   const handleFormSubmit = (event) => {
