@@ -13,30 +13,31 @@ export const Overview = () => {
     setNewThought(event.target.value)
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchThoughts();
   }, [])
 
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-    .then(res => res.json())
-    .then(data => setThoughts(data))
+    fetch('https://happy-thoughts-welcome.onrender.com/thoughts')
+      .then(res => res.json())
+      .then(data => setThoughts(data.response))
   }
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    const options = { 
-      method: 'POST', 
+    const options = {
+      method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: newThought })
     }
-  
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+
+    fetch('https://happy-thoughts-welcome.onrender.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
-      .finally(()=> setNewThought(''))
+      .finally(() => setNewThought(''))
   }
+
 
   const handleLikes = (id) => {
 
@@ -45,23 +46,38 @@ export const Overview = () => {
       headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
+    fetch(`https://happy-thoughts-welcome.onrender.com/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
   }
 
+  const handleDelete = (id) => {
+
+    const options = {
+      method: 'DELETE'
+    }
+
+    fetch(`https://happy-thoughts-welcome.onrender.com/thoughts/${id}`, options)
+      .then((res) => res.json())
+      .then(() => fetchThoughts())
+  }
+
+
+
   return (
     <section className='container'>
-      <Form 
+      <Form
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
-        onSetThoughtChange={handleOnNewThought}/>
+        onSetThoughtChange={handleOnNewThought} />
 
-      {thoughts.map((thought)=> (
-      <Thought 
-        key={thought._id}
-        thought={thought}
-        handleLikes={handleLikes}
+      {thoughts.map((thought) => (
+        <Thought
+          key={thought._id}
+          thought={thought}
+          handleLikes={handleLikes}
+          handleDelete={handleDelete}
+          fetchThoughts={fetchThoughts}
         />
       ))}
     </section>

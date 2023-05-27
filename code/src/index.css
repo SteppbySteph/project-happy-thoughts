@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -48,7 +48,7 @@ code {
   background-color: #e0dddd;
 }
 
-.form-content{
+.form-content {
   display: grid;
   row-gap: 0.5em;
 }
@@ -77,7 +77,7 @@ code {
   width: 327px;
 }
 
-.post-content{
+.post-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -109,13 +109,26 @@ code {
 }
 
 .time-stamp {
- color: #302f2f;
+  color: #302f2f;
+}
+
+.msg-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.del-btn {
+  margin-left: 1rem;
+  border: none;
+  background-color: rgb(245, 236, 236);
+  align-self: flex-start;
+  font-size: small;
 }
 
 /*---- TABLET MODE-----*/
 
-@media (min-width: 768px){
-  
+@media (min-width: 768px) {
+
   .container {
     width: 600px;
   }
@@ -125,7 +138,7 @@ code {
     padding: 1em;
   }
 
-  .post-container{
+  .post-container {
     width: 500px;
   }
 
@@ -136,7 +149,7 @@ code {
 
 /*---- DESKTOP MODE-----*/
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
 
   .container {
     width: 600px;
@@ -147,7 +160,7 @@ code {
     padding: 1em;
   }
 
-  .post-container{
+  .post-container {
     width: 550px;
   }
 
@@ -156,4 +169,3 @@ code {
   }
 
 }
-

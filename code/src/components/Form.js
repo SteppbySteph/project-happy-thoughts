@@ -1,16 +1,16 @@
 import React from 'react'
 
-const Form = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
+const Form = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
 
     return (
-       <section className='form-container'>
-            <form 
+        <section className='form-container'>
+            <form
                 onSubmit={onFormSubmit}
                 className='form-content'
             >
                 <h1>What's making you happy right now?</h1>
                 <label htmlFor='new-thought'>
-                    <textarea 
+                    <textarea
                         className='input-text'
                         rows="5"
                         cols="30"
@@ -22,15 +22,15 @@ const Form = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
 
                     />
                 </label>
-                <button 
-                        type='submit'
-                        className='submit-btn'
-                        disabled={newThought.length < 5 || newThought.length > 140}
-                    ><span  role='img' aria-label='heart'>
-                    ❤️ Send Happy Thought ❤️</span>
+                <button
+                    type='submit'
+                    className='submit-btn'
+                    disabled={newThought.length < 5 || newThought.length > 140}
+                ><span role='img' aria-label='heart'>
+                        ❤️ Send Happy Thought ❤️</span>
                 </button>
             </form>
-       </section>
+        </section>
     )
 
 
