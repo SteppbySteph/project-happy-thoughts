@@ -51,16 +51,16 @@ export const Overview = () => {
       .then(() => fetchThoughts())
   }
 
-  const handleDelete = (id) => {
+  // const handleDelete = (id) => {
 
-    const options = {
-      method: 'DELETE'
-    }
+  //   const options = {
+  //     method: 'DELETE'
+  //   }
 
-    fetch(`https://happy-thoughts-welcome.onrender.com/thoughts/${id}`, options)
-      .then((res) => res.json())
-      .then(() => fetchThoughts())
-  }
+  //   fetch(`https://happy-thoughts-welcome.onrender.com/thoughts/${id}`, options)
+  //     .then((res) => res.json())
+  //     .then(() => fetchThoughts())
+  // }
 
 
 
@@ -76,10 +76,11 @@ export const Overview = () => {
           key={thought._id}
           thought={thought}
           handleLikes={handleLikes}
-          handleDelete={handleDelete}
           fetchThoughts={fetchThoughts}
         />
       ))}
     </section>
   )
 }
+
+// handleDelete={handleDelete}
