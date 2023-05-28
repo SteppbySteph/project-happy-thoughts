@@ -51,19 +51,6 @@ export const Overview = () => {
       .then(() => fetchThoughts())
   }
 
-  // const handleDelete = (id) => {
-
-  //   const options = {
-  //     method: 'DELETE'
-  //   }
-
-  //   fetch(`https://happy-thoughts-welcome.onrender.com/thoughts/${id}`, options)
-  //     .then((res) => res.json())
-  //     .then(() => fetchThoughts())
-  // }
-
-
-
   return (
     <section className='container'>
       <Form
@@ -82,5 +69,3 @@ export const Overview = () => {
     </section>
   )
 }
-
-// handleDelete={handleDelete}

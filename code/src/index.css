@@ -58,6 +58,7 @@ code {
   font-size: 16px;
   color: black;
   resize: none;
+  width: 18rem;
 }
 
 .submit-btn {

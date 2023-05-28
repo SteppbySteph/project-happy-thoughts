@@ -13,7 +13,7 @@ const Form = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
                     <textarea
                         className='input-text'
                         rows="5"
-                        cols="30"
+                        // cols="30"
                         onChange={onSetThoughtChange}
                         value={newThought}
                         id='new-thought'

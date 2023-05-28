@@ -4,20 +4,12 @@ import parseISO from 'date-fns/parseISO'
 
 const Thought = ({ thought, handleLikes }) => {
 
-    //handleDelete
-
     const timePosted = formatDistance(parseISO(thought.createdAt), new Date(), { addSuffix: true })
     return (
         <section className='post-container'>
             <div className='post-content'>
                 <div className='msg-delete'>
                     <p key={thought._id}>{thought.message}</p>
-                    {/* <button
-                        className='del-btn'
-                        onClick={() => handleDelete(thought._id)}>
-                        <span role='img' aria-label='heart'>✖
-                        </span>
-                    </button> */}
                 </div>
                 <div className='info-group' >
                     <div>
